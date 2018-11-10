@@ -1,0 +1,22 @@
+{
+  "@context" : {
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "Answer" : {
+      "@id" : "http://ns.peterkrantz.se/flashcards/2018#Answer"
+    },
+    "Test" : {
+      "@id" : "http://ns.peterkrantz.se/flashcards/2018#Test"
+    },
+    "Card" : {
+      "@id" : "http://ns.peterkrantz.se/flashcards/2018#Card"
+    },
+    "Stack" : {
+      "@id" : "http://ns.peterkrantz.se/flashcards/2018#Stack"
+    }
+  }
+}
