@@ -1,0 +1,56 @@
+[ {
+  "@id" : "http://ns.peterkrantz.se/flashcards/2018#",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "This vocabulary describes flash cards. A flash card containins information such as words, numbers or images. Flash cards are used by students in classroom drills or in private study to improve memorization. A card contains the information being studied and is, optionally, divided into a question and a related answer. Multiple related cards can be grouped in a stack."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Flash card ontology"
+  } ]
+}, {
+  "@id" : "http://ns.peterkrantz.se/flashcards/2018#Answer",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An answer to a related test."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Answer"
+  } ]
+}, {
+  "@id" : "http://ns.peterkrantz.se/flashcards/2018#Card",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A physical or virtual card bearing information such as words, images or numbers, on either or both sides. Used in classroom drills or in private study. The card has an associated test and an answer."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Card"
+  } ]
+}, {
+  "@id" : "http://ns.peterkrantz.se/flashcards/2018#Stack",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A stack represents a collection of cards and is typically used to group cards belonging to a topic being studied. E.g. a collection of cards containing vocabulary for a chapter in a language textbook."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Stack"
+  } ]
+}, {
+  "@id" : "http://ns.peterkrantz.se/flashcards/2018#Test",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The information the user is trying to memorize. Representing the front side of a physical card."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Test"
+  } ]
+} ]
