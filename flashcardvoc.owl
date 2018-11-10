@@ -1,13 +1,21 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://ns.peterkrantz.se/flashcards/2018#"
      xml:base="http://ns.peterkrantz.se/flashcards/2018"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
      xmlns:dct="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="http://ns.peterkrantz.se/flashcards/2018#">
+        <owl:imports rdf:resource="http://purl.org/dc/terms/"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <dc:creator>Peter Krantz</dc:creator>
         <rdfs:comment xml:lang="en">This vocabulary describes flash cards. A flash card containins information such as words, numbers or images. Flash cards are used by students in classroom drills or in private study to improve memorization. A card contains the information being studied and is, optionally, divided into a question and a related answer. Multiple related cards can be grouped in a stack.</rdfs:comment>
         <rdfs:label xml:lang="en">Flash card ontology</rdfs:label>
     </owl:Ontology>
@@ -28,6 +36,7 @@
     <!-- http://ns.peterkrantz.se/flashcards/2018#Answer -->
 
     <owl:Class rdf:about="http://ns.peterkrantz.se/flashcards/2018#Answer">
+        <dct:isPartOf rdf:resource="http://ns.peterkrantz.se/flashcards/2018#Card"/>
         <rdfs:comment xml:lang="en">An answer to a related test.</rdfs:comment>
         <rdfs:label xml:lang="en">Answer</rdfs:label>
     </owl:Class>
@@ -37,6 +46,7 @@
     <!-- http://ns.peterkrantz.se/flashcards/2018#Card -->
 
     <owl:Class rdf:about="http://ns.peterkrantz.se/flashcards/2018#Card">
+        <dct:isPartOf rdf:resource="http://ns.peterkrantz.se/flashcards/2018#Stack"/>
         <rdfs:comment xml:lang="en">A physical or virtual card bearing information such as words, images or numbers, on either or both sides. Used in classroom drills or in private study. The card has an associated test and an answer.</rdfs:comment>
         <rdfs:label xml:lang="en">Card</rdfs:label>
     </owl:Class>
@@ -46,6 +56,7 @@
     <!-- http://ns.peterkrantz.se/flashcards/2018#Stack -->
 
     <owl:Class rdf:about="http://ns.peterkrantz.se/flashcards/2018#Stack">
+        <dct:hasPart rdf:resource="http://ns.peterkrantz.se/flashcards/2018#Card"/>
         <rdfs:comment xml:lang="en">A stack represents a collection of cards and is typically used to group cards belonging to a topic being studied. E.g. a collection of cards containing vocabulary for a chapter in a language textbook.</rdfs:comment>
         <rdfs:label xml:lang="en">Stack</rdfs:label>
     </owl:Class>
@@ -55,9 +66,30 @@
     <!-- http://ns.peterkrantz.se/flashcards/2018#Test -->
 
     <owl:Class rdf:about="http://ns.peterkrantz.se/flashcards/2018#Test">
+        <dct:isPartOf rdf:resource="http://ns.peterkrantz.se/flashcards/2018#Card"/>
         <rdfs:comment xml:lang="en">The information the user is trying to memorize. Representing the front side of a physical card.</rdfs:comment>
         <rdfs:label xml:lang="en">Test</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ns.peterkrantz.se/flashcards/2018#Answer"/>
+            <rdf:Description rdf:about="http://ns.peterkrantz.se/flashcards/2018#Card"/>
+            <rdf:Description rdf:about="http://ns.peterkrantz.se/flashcards/2018#Stack"/>
+            <rdf:Description rdf:about="http://ns.peterkrantz.se/flashcards/2018#Test"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
