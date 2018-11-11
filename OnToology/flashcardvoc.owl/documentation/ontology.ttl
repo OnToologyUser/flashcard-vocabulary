@@ -10,7 +10,7 @@
                                              <http://purl.org/dc/elements/1.1/creator> "Peter Krantz" ;
                                              <http://purl.org/dc/terms/abstract> "This document also contains examples of serialization in XML and JSON."@en ;
                                              <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> ;
-                                             rdfs:comment "This vocabulary describes flash cards. A flash card contains information such as words, numbers or images. Flash cards are used by students in classroom drills or in private study to improve memorization. A card contains the information being studied and is, optionally, divided into a question and a related answer. Multiple related cards can be grouped in a stack."@en ;
+                                             rdfs:comment "This vocabulary describes flash cards. A flash card contains information such as words, numbers or images. Flash cards are used by students in classroom drills or in private study to improve memorization. A card contains the information being memorized and is divided into a question and a related answer. Multiple related cards can be grouped in a stack."@en ;
                                              rdfs:label "Flash card ontology"@en .
 
 #################################################################
