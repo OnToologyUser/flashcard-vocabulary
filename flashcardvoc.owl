@@ -15,7 +15,7 @@
         <dc:creator>Peter Krantz</dc:creator>
         <dct:abstract xml:lang="en">This document also contains examples of serialization in XML and JSON.</dct:abstract>
         <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <rdfs:comment xml:lang="en">This vocabulary describes flash cards. A flash card contains information such as words, numbers or images. Flash cards are used by students in classroom drills or in private study to improve memorization. A card contains the information being studied and is, optionally, divided into a question and a related answer. Multiple related cards can be grouped in a stack.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This vocabulary describes flash cards. A flash card contains information such as words, numbers or images. Flash cards are used by students in classroom drills or in private study to improve memorization. A card contains the information being memorized and is divided into a question and a related answer. Multiple related cards can be grouped in a stack.</rdfs:comment>
         <rdfs:label xml:lang="en">Flash card ontology</rdfs:label>
     </owl:Ontology>
     
