@@ -135,7 +135,7 @@
 ###  https://w3id.org/flashcards/vocab/2018#Test
 :Test rdf:type owl:Class ;
       <http://purl.org/dc/terms/isPartOf> :Card ;
-      rdfs:comment "The information the user is trying to memorize. Representing the front side of a physical card."@en ;
+      rdfs:comment "Information describing a challenge for the user. E.g. it could be a word the user needs to recall in a foreign language. Representing the front side of a physical card."@en ;
       rdfs:label "Test"@en .
 
 

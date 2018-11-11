@@ -98,7 +98,7 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "The information the user is trying to memorize. Representing the front side of a physical card."
+    "@value" : "Information describing a challenge for the user. E.g. it could be a word the user needs to recall in a foreign language. Representing the front side of a physical card."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
