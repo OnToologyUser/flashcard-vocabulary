@@ -50,6 +50,14 @@
 # #################################################################
 # 
 # 
+# https://w3id.org/flashcards/vocab/2018#explanation
+<https://w3id.org/flashcards/vocab/2018#explanation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/flashcards/vocab/2018#explanation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/flashcards/vocab/2018#explanation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/flashcards/vocab/2018#Answer> .
+<https://w3id.org/flashcards/vocab/2018#explanation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/flashcards/vocab/2018#explanation> <http://www.w3.org/2000/01/rdf-schema#comment> "A short text explaning the answer in more detail. E.g. for disambiguation purposes."@en .
+<https://w3id.org/flashcards/vocab/2018#explanation> <http://www.w3.org/2000/01/rdf-schema#label> "explanation"@en .
+# 
 # https://w3id.org/flashcards/vocab/2018#hint
 <https://w3id.org/flashcards/vocab/2018#hint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/flashcards/vocab/2018#hint> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/flashcards/vocab/2018#Answer> .

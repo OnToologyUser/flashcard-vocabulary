@@ -57,6 +57,10 @@
       "@id" : "https://w3id.org/flashcards/vocab/2018#sortOrder",
       "@type" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
     },
+    "explanation" : {
+      "@id" : "https://w3id.org/flashcards/vocab/2018#explanation",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
     "comment" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
     },

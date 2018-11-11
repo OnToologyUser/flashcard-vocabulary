@@ -94,6 +94,19 @@
     
 
 
+    <!-- https://w3id.org/flashcards/vocab/2018#explanation -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/flashcards/vocab/2018#explanation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/flashcards/vocab/2018#Answer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">A short text explaning the answer in more detail. E.g. for disambiguation purposes.</rdfs:comment>
+        <rdfs:label xml:lang="en">explanation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/flashcards/vocab/2018#hint -->
 
 
