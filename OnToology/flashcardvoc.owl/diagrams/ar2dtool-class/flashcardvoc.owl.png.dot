@@ -1,26 +1,33 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1501"
-node [shape = rectangle, color="orange"]; "fco:Test" "fco:Stack" "fco:Card" "fco:Answer" ; /*classes style*/
-	"fco:Card" -> "fco:Stack" [ label = "dct:isPartOf" ];
-	"fco:Test" -> "fco:Card" [ label = "dct:isPartOf" ];
-	"fco:Answer" -> "fco:Card" [ label = "dct:isPartOf" ];
-	"fco:Stack" -> "fco:Card" [ label = "dct:hasPart" ];
-	"fco:" -> "http://creativecommons.org/licenses/by/4.0/" [ label = "dct:license" ];
-	"fco:mediaItem" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
-	"fco:relatedWork" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
-	"NULL" -> "-43eca811:16702957fa2:-7ff9" [ label = "rdf:rest" ];
-	"NULL" -> "fco:Card" [ label = "rdf:first" ];
-	"NULL" -> "-43eca811:16702957fa2:-7ffb" [ label = "owl:members" ];
-	"NULL" -> "-43eca811:16702957fa2:-7ff8" [ label = "rdf:rest" ];
-	"NULL" -> "fco:Stack" [ label = "rdf:first" ];
-	"NULL" -> "-43eca811:16702957fa2:-7ffa" [ label = "rdf:rest" ];
-	"NULL" -> "fco:Answer" [ label = "rdf:first" ];
+node [shape = rectangle, color="orange"]; "https://w3id.org/flashcards/vocab/2018#Test" "https://w3id.org/flashcards/vocab/2018#Stack" "https://w3id.org/flashcards/vocab/2018#Card" "https://w3id.org/flashcards/vocab/2018#Answer" ; /*classes style*/
+	"https://w3id.org/flashcards/vocab/2018#Card" -> "https://w3id.org/flashcards/vocab/2018#Stack" [ label = "dct:isPartOf" ];
+	"https://w3id.org/flashcards/vocab/2018#mediaItem" -> "https://w3id.org/flashcards/vocab/2018#mediaUrl" [ label = "rdfs:seeAlso" ];
+	"https://w3id.org/flashcards/vocab/2018#mediaItem" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"https://w3id.org/flashcards/vocab/2018#Answer" -> "https://w3id.org/flashcards/vocab/2018#Card" [ label = "dct:isPartOf" ];
+	"https://w3id.org/flashcards/vocab/2018#Test" -> "https://w3id.org/flashcards/vocab/2018#Card" [ label = "dct:isPartOf" ];
+	"https://w3id.org/flashcards/vocab/2018#instruction" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"https://w3id.org/flashcards/vocab/2018#mediaUrl" -> "https://w3id.org/flashcards/vocab/2018#mediaItem" [ label = "rdfs:seeAlso" ];
+	"https://w3id.org/flashcards/vocab/2018#mediaUrl" -> "owl:topDataProperty" [ label = "rdfs:subPropertyOf" ];
+	"https://w3id.org/flashcards/vocab/2018#Stack" -> "https://w3id.org/flashcards/vocab/2018#Card" [ label = "dct:hasPart" ];
+	"NULL" -> "f9eb47d:167036038fc:-7ff9" [ label = "rdf:rest" ];
+	"NULL" -> "https://w3id.org/flashcards/vocab/2018#Card" [ label = "rdf:first" ];
+	"NULL" -> "f9eb47d:167036038fc:-7ffb" [ label = "owl:members" ];
+	"NULL" -> "f9eb47d:167036038fc:-7ff8" [ label = "rdf:rest" ];
+	"NULL" -> "https://w3id.org/flashcards/vocab/2018#Stack" [ label = "rdf:first" ];
+	"NULL" -> "f9eb47d:167036038fc:-7ffa" [ label = "rdf:rest" ];
+	"NULL" -> "https://w3id.org/flashcards/vocab/2018#Answer" [ label = "rdf:first" ];
 	"NULL" -> "rdf:nil" [ label = "rdf:rest" ];
-	"NULL" -> "fco:Test" [ label = "rdf:first" ];
-	"fco:Card" -> "xsd:positiveInteger" [ label = "fco:sortOrder" ];
-	"fco:Stack" -> "owl:Thing" [ label = "fco:relatedWork" ];
-	"fco:Card" -> "owl:Thing" [ label = "fco:mediaItem" ];
-	"fco:Card" -> "owl:Thing" [ label = "fco:text" ];
+	"NULL" -> "https://w3id.org/flashcards/vocab/2018#Test" [ label = "rdf:first" ];
+	"https://w3id.org/flashcards/vocab/2018#" -> "http://purl.org/dcx/lrmi-terms/" [ label = "rdfs:seeAlso" ];
+	"https://w3id.org/flashcards/vocab/2018#" -> "http://creativecommons.org/licenses/by/4.0/" [ label = "dct:license" ];
+	"https://w3id.org/flashcards/vocab/2018#Stack" -> "xsd:string" [ label = "https://w3id.org/flashcards/vocab/2018#instruction" ];
+	"https://w3id.org/flashcards/vocab/2018#Card" -> "xsd:string" [ label = "https://w3id.org/flashcards/vocab/2018#text" ];
+	"https://w3id.org/flashcards/vocab/2018#Answer" -> "xsd:string" [ label = "https://w3id.org/flashcards/vocab/2018#mediaUrl" ];
+	"https://w3id.org/flashcards/vocab/2018#Stack" -> "owl:Thing" [ label = "https://w3id.org/flashcards/vocab/2018#relatedWork" ];
+	"https://w3id.org/flashcards/vocab/2018#Answer" -> "owl:Thing" [ label = "https://w3id.org/flashcards/vocab/2018#mediaItem" ];
+	"https://w3id.org/flashcards/vocab/2018#Card" -> "xsd:positiveInteger" [ label = "https://w3id.org/flashcards/vocab/2018#sortOrder" ];
+	"https://w3id.org/flashcards/vocab/2018#Answer" -> "xsd:string" [ label = "https://w3id.org/flashcards/vocab/2018#hint" ];
 
 }

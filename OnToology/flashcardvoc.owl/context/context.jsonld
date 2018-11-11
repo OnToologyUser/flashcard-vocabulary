@@ -1,7 +1,12 @@
 {
   "@context" : {
-    "abstract" : {
-      "@id" : "http://purl.org/dc/terms/abstract"
+    "hint" : {
+      "@id" : "https://w3id.org/flashcards/vocab/2018#hint",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "mediaUrl" : {
+      "@id" : "https://w3id.org/flashcards/vocab/2018#mediaUrl",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "license" : {
       "@id" : "http://purl.org/dc/terms/license"
@@ -10,13 +15,18 @@
       "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
     },
     "mediaItem" : {
-      "@id" : "http://ns.peterkrantz.se/flashcards/2018#mediaItem"
+      "@id" : "https://w3id.org/flashcards/vocab/2018#mediaItem"
+    },
+    "instruction" : {
+      "@id" : "https://w3id.org/flashcards/vocab/2018#instruction",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "Test" : {
-      "@id" : "http://ns.peterkrantz.se/flashcards/2018#Test"
+      "@id" : "https://w3id.org/flashcards/vocab/2018#Test"
     },
     "relatedWork" : {
-      "@id" : "http://ns.peterkrantz.se/flashcards/2018#relatedWork"
+      "@id" : "https://w3id.org/flashcards/vocab/2018#relatedWork",
+      "@type" : "@id"
     },
     "label" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
@@ -28,26 +38,36 @@
       "@id" : "http://purl.org/dc/terms/hasPart"
     },
     "Card" : {
-      "@id" : "http://ns.peterkrantz.se/flashcards/2018#Card"
+      "@id" : "https://w3id.org/flashcards/vocab/2018#Card"
     },
     "creator" : {
       "@id" : "http://purl.org/dc/elements/1.1/creator"
     },
     "text" : {
-      "@id" : "http://ns.peterkrantz.se/flashcards/2018#text"
+      "@id" : "https://w3id.org/flashcards/vocab/2018#text",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/elements/1.1/title"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
     },
     "sortOrder" : {
-      "@id" : "http://ns.peterkrantz.se/flashcards/2018#sortOrder",
+      "@id" : "https://w3id.org/flashcards/vocab/2018#sortOrder",
       "@type" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
     },
     "comment" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
     },
     "Stack" : {
-      "@id" : "http://ns.peterkrantz.se/flashcards/2018#Stack"
+      "@id" : "https://w3id.org/flashcards/vocab/2018#Stack"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/elements/1.1/description"
     },
     "Answer" : {
-      "@id" : "http://ns.peterkrantz.se/flashcards/2018#Answer"
+      "@id" : "https://w3id.org/flashcards/vocab/2018#Answer"
     }
   }
 }
