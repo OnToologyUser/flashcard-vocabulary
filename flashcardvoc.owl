@@ -11,12 +11,13 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:schema="http://schema.org/">
-    <owl:Ontology rdf:about="http://ns.peterkrantz.se/flashcards/2018#">
+    <owl:Ontology rdf:about="https://w3id.org/flashcards/vocab/2018#">
         <dc:creator>Peter Krantz</dc:creator>
-        <dct:abstract xml:lang="en">This document also contains examples of serialization in XML and JSON.</dct:abstract>
+        <dc:description xml:lang="en">This vocanulary has an associated XML Schema file showing an example serialization format for flash cards.</dc:description>
         <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <rdfs:comment xml:lang="en">This vocabulary describes flash cards. A flash card contains information such as words, numbers or images. Flash cards are used by students in classroom drills or in private study to improve memorization. A card contains the information being memorized and is divided into a question and a related answer. Multiple related cards can be grouped in a stack.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This vocabulary describes flash cards. Flash cards are used by students in classroom drills or in private study to improve memorization. A flash card contains information such as words, numbers or images and is divided into a test and a related answer. Multiple cards belong to a stack e.g. vocabulary cards for a chapter in a foreign language textbook.</rdfs:comment>
         <rdfs:label xml:lang="en">Flash card ontology</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://purl.org/dcx/lrmi-terms/"/>
     </owl:Ontology>
     
 
@@ -29,6 +30,18 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
     
 
 
@@ -47,6 +60,27 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/flashcards/vocab/2018#relatedWork -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/flashcards/vocab/2018#relatedWork">
+        <rdfs:domain rdf:resource="https://w3id.org/flashcards/vocab/2018#Stack"/>
+        <rdfs:comment xml:lang="en">A related creative work like a book, a book chapter, a movie or song to which this item is relates. This property can be e.g. be used to connect a stack of flash cards  to a chapter in a french language textbook.</rdfs:comment>
+        <rdfs:label xml:lang="en">related work</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Data properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -55,43 +89,76 @@
     
 
 
-    <!-- http://ns.peterkrantz.se/flashcards/2018#mediaItem -->
+    <!-- https://w3id.org/flashcards/vocab/2018#hint -->
 
-    <owl:DatatypeProperty rdf:about="http://ns.peterkrantz.se/flashcards/2018#mediaItem">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/flashcards/vocab/2018#hint">
+        <rdfs:domain rdf:resource="https://w3id.org/flashcards/vocab/2018#Answer"/>
+        <rdfs:domain rdf:resource="https://w3id.org/flashcards/vocab/2018#Test"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">A short text with a hint to the user about the answer.</rdfs:comment>
+        <rdfs:label xml:lang="en">hint</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/flashcards/vocab/2018#instruction -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/flashcards/vocab/2018#instruction">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://ns.peterkrantz.se/flashcards/2018#Card"/>
-        <rdfs:comment xml:lang="en">Media item data for a audio, an image or other types of media.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/flashcards/vocab/2018#Stack"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">A text with instructions to a user of a stack of cards. It could be a e.g. a study guide or instructions for preparation.</rdfs:comment>
+        <rdfs:label xml:lang="en">instruction</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/flashcards/vocab/2018#mediaItem -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/flashcards/vocab/2018#mediaItem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/flashcards/vocab/2018#Answer"/>
+        <rdfs:domain rdf:resource="https://w3id.org/flashcards/vocab/2018#Stack"/>
+        <rdfs:domain rdf:resource="https://w3id.org/flashcards/vocab/2018#Test"/>
+        <rdfs:comment xml:lang="en">Binary data for e.g. an audio file, an image or other types of media that a card requires.</rdfs:comment>
         <rdfs:label xml:lang="en">media</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://w3id.org/flashcards/vocab/2018#mediaUrl"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ns.peterkrantz.se/flashcards/2018#relatedWork -->
+    <!-- https://w3id.org/flashcards/vocab/2018#mediaUrl -->
 
-    <owl:DatatypeProperty rdf:about="http://ns.peterkrantz.se/flashcards/2018#relatedWork">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/flashcards/vocab/2018#mediaUrl">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://ns.peterkrantz.se/flashcards/2018#Stack"/>
-        <rdfs:comment xml:lang="en">A related creative work as e.g. a book, a book chapter, a movie or song. This property can be used to connect a stack of cards to a vocabulary from a chapter in a language textbook.</rdfs:comment>
-        <rdfs:label xml:lang="en">related work</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/flashcards/vocab/2018#Answer"/>
+        <rdfs:domain rdf:resource="https://w3id.org/flashcards/vocab/2018#Stack"/>
+        <rdfs:domain rdf:resource="https://w3id.org/flashcards/vocab/2018#Test"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">A direct URL to a media file that is requred for displaying a card.</rdfs:comment>
+        <rdfs:label xml:lang="en">media url</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://w3id.org/flashcards/vocab/2018#mediaItem"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ns.peterkrantz.se/flashcards/2018#sortOrder -->
+    <!-- https://w3id.org/flashcards/vocab/2018#sortOrder -->
 
-    <owl:DatatypeProperty rdf:about="http://ns.peterkrantz.se/flashcards/2018#sortOrder">
-        <rdfs:domain rdf:resource="http://ns.peterkrantz.se/flashcards/2018#Card"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/flashcards/vocab/2018#sortOrder">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/flashcards/vocab/2018#Card"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-        <rdfs:comment xml:lang="en">The initial card sort order expressed as an integer value. The sort order should be used as a suggestion, e.g. when no other sort order exists, and may be ignored by users and tools.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The initial card sort order expressed as an integer value. The sort order should be used as a suggestion, e.g. when no other sort order exists, and may be ignored by users and tools. The sort order does not imply that consecutive cards have a sort order incrremented by one.</rdfs:comment>
         <rdfs:label xml:lang="en">sort order</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://ns.peterkrantz.se/flashcards/2018#text -->
+    <!-- https://w3id.org/flashcards/vocab/2018#text -->
 
-    <owl:DatatypeProperty rdf:about="http://ns.peterkrantz.se/flashcards/2018#text">
-        <rdfs:domain rdf:resource="http://ns.peterkrantz.se/flashcards/2018#Card"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/flashcards/vocab/2018#text">
+        <rdfs:domain rdf:resource="https://w3id.org/flashcards/vocab/2018#Card"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">Text content for this object.</rdfs:comment>
         <rdfs:label xml:lang="en">text</rdfs:label>
     </owl:DatatypeProperty>
@@ -109,40 +176,40 @@
     
 
 
-    <!-- http://ns.peterkrantz.se/flashcards/2018#Answer -->
+    <!-- https://w3id.org/flashcards/vocab/2018#Answer -->
 
-    <owl:Class rdf:about="http://ns.peterkrantz.se/flashcards/2018#Answer">
-        <dct:isPartOf rdf:resource="http://ns.peterkrantz.se/flashcards/2018#Card"/>
-        <rdfs:comment xml:lang="en">An answer to a related test.</rdfs:comment>
+    <owl:Class rdf:about="https://w3id.org/flashcards/vocab/2018#Answer">
+        <dct:isPartOf rdf:resource="https://w3id.org/flashcards/vocab/2018#Card"/>
+        <rdfs:comment xml:lang="en">An answer to a related test - thing that the user is trying to memorize. Representing the back side of a physical flash card.</rdfs:comment>
         <rdfs:label xml:lang="en">Answer</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://ns.peterkrantz.se/flashcards/2018#Card -->
+    <!-- https://w3id.org/flashcards/vocab/2018#Card -->
 
-    <owl:Class rdf:about="http://ns.peterkrantz.se/flashcards/2018#Card">
-        <dct:isPartOf rdf:resource="http://ns.peterkrantz.se/flashcards/2018#Stack"/>
+    <owl:Class rdf:about="https://w3id.org/flashcards/vocab/2018#Card">
+        <dct:isPartOf rdf:resource="https://w3id.org/flashcards/vocab/2018#Stack"/>
         <rdfs:comment xml:lang="en">A physical or virtual card bearing information such as words, images or numbers, on either or both sides. Used in classroom drills or in private study. The card has an associated test and an answer.</rdfs:comment>
         <rdfs:label xml:lang="en">Card</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://ns.peterkrantz.se/flashcards/2018#Stack -->
+    <!-- https://w3id.org/flashcards/vocab/2018#Stack -->
 
-    <owl:Class rdf:about="http://ns.peterkrantz.se/flashcards/2018#Stack">
-        <dct:hasPart rdf:resource="http://ns.peterkrantz.se/flashcards/2018#Card"/>
+    <owl:Class rdf:about="https://w3id.org/flashcards/vocab/2018#Stack">
+        <dct:hasPart rdf:resource="https://w3id.org/flashcards/vocab/2018#Card"/>
         <rdfs:comment xml:lang="en">A stack represents a collection of cards and is typically used to group cards belonging to a topic being studied. E.g. a collection of cards containing vocabulary for a chapter in a language textbook.</rdfs:comment>
         <rdfs:label xml:lang="en">Stack</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://ns.peterkrantz.se/flashcards/2018#Test -->
+    <!-- https://w3id.org/flashcards/vocab/2018#Test -->
 
-    <owl:Class rdf:about="http://ns.peterkrantz.se/flashcards/2018#Test">
-        <dct:isPartOf rdf:resource="http://ns.peterkrantz.se/flashcards/2018#Card"/>
+    <owl:Class rdf:about="https://w3id.org/flashcards/vocab/2018#Test">
+        <dct:isPartOf rdf:resource="https://w3id.org/flashcards/vocab/2018#Card"/>
         <rdfs:comment xml:lang="en">The information the user is trying to memorize. Representing the front side of a physical card.</rdfs:comment>
         <rdfs:label xml:lang="en">Test</rdfs:label>
     </owl:Class>
@@ -160,10 +227,10 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://ns.peterkrantz.se/flashcards/2018#Answer"/>
-            <rdf:Description rdf:about="http://ns.peterkrantz.se/flashcards/2018#Card"/>
-            <rdf:Description rdf:about="http://ns.peterkrantz.se/flashcards/2018#Stack"/>
-            <rdf:Description rdf:about="http://ns.peterkrantz.se/flashcards/2018#Test"/>
+            <rdf:Description rdf:about="https://w3id.org/flashcards/vocab/2018#Answer"/>
+            <rdf:Description rdf:about="https://w3id.org/flashcards/vocab/2018#Card"/>
+            <rdf:Description rdf:about="https://w3id.org/flashcards/vocab/2018#Stack"/>
+            <rdf:Description rdf:about="https://w3id.org/flashcards/vocab/2018#Test"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
