@@ -49,6 +49,15 @@
 #    Data properties
 #################################################################
 
+###  https://w3id.org/flashcards/vocab/2018#explanation
+:explanation rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Answer ;
+             rdfs:range xsd:string ;
+             rdfs:comment "A short text explaning the answer in more detail. E.g. for disambiguation purposes."@en ;
+             rdfs:label "explanation"@en .
+
+
 ###  https://w3id.org/flashcards/vocab/2018#hint
 :hint rdf:type owl:DatatypeProperty ;
       rdfs:domain :Answer ,
