@@ -1,21 +1,30 @@
-@prefix : <http://ns.peterkrantz.se/flashcards/2018#> .
+@prefix : <https://w3id.org/flashcards/vocab/2018#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://ns.peterkrantz.se/flashcards/2018#> .
+@base <https://w3id.org/flashcards/vocab/2018#> .
 
-<http://ns.peterkrantz.se/flashcards/2018#> rdf:type owl:Ontology ;
-                                             <http://purl.org/dc/elements/1.1/creator> "Peter Krantz" ;
-                                             <http://purl.org/dc/terms/abstract> "This document also contains examples of serialization in XML and JSON."@en ;
-                                             <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> ;
-                                             rdfs:comment "This vocabulary describes flash cards. A flash card contains information such as words, numbers or images. Flash cards are used by students in classroom drills or in private study to improve memorization. A card contains the information being memorized and is divided into a question and a related answer. Multiple related cards can be grouped in a stack."@en ;
-                                             rdfs:label "Flash card ontology"@en .
+<https://w3id.org/flashcards/vocab/2018#> rdf:type owl:Ontology ;
+                                           <http://purl.org/dc/elements/1.1/creator> "Peter Krantz" ;
+                                           <http://purl.org/dc/elements/1.1/description> "This vocanulary has an associated XML Schema file showing an example serialization format for flash cards."@en ;
+                                           <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> ;
+                                           rdfs:comment "This vocabulary describes flash cards. Flash cards are used by students in classroom drills or in private study to improve memorization. A flash card contains information such as words, numbers or images and is divided into a test and a related answer. Multiple cards belong to a stack e.g. vocabulary cards for a chapter in a foreign language textbook."@en ;
+                                           rdfs:label "Flash card ontology"@en ;
+                                           rdfs:seeAlso <http://purl.org/dcx/lrmi-terms/> .
 
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
 
 ###  http://purl.org/dc/terms/hasPart
 <http://purl.org/dc/terms/hasPart> rdf:type owl:AnnotationProperty .
@@ -26,36 +35,74 @@
 
 
 #################################################################
-#    Data properties
+#    Object Properties
 #################################################################
 
-###  http://ns.peterkrantz.se/flashcards/2018#mediaItem
-:mediaItem rdf:type owl:DatatypeProperty ;
-           rdfs:subPropertyOf owl:topDataProperty ;
-           rdfs:domain :Card ;
-           rdfs:comment "Media item data for a audio, an image or other types of media."@en ;
-           rdfs:label "media"@en .
-
-
-###  http://ns.peterkrantz.se/flashcards/2018#relatedWork
-:relatedWork rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf owl:topDataProperty ;
+###  https://w3id.org/flashcards/vocab/2018#relatedWork
+:relatedWork rdf:type owl:ObjectProperty ;
              rdfs:domain :Stack ;
-             rdfs:comment "A related creative work as e.g. a book, a book chapter, a movie or song. This property can be used to connect a stack of cards to a vocabulary from a chapter in a language textbook."@en ;
+             rdfs:comment "A related creative work like a book, a book chapter, a movie or song to which this item is relates. This property can be e.g. be used to connect a stack of flash cards  to a chapter in a french language textbook."@en ;
              rdfs:label "related work"@en .
 
 
-###  http://ns.peterkrantz.se/flashcards/2018#sortOrder
-:sortOrder rdf:type owl:DatatypeProperty ;
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/flashcards/vocab/2018#hint
+:hint rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Answer ,
+                  :Test ;
+      rdfs:range xsd:string ;
+      rdfs:comment "A short text with a hint to the user about the answer."@en ;
+      rdfs:label "hint"@en .
+
+
+###  https://w3id.org/flashcards/vocab/2018#instruction
+:instruction rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Stack ;
+             rdfs:range xsd:string ;
+             rdfs:comment "A text with instructions to a user of a stack of cards. It could be a e.g. a study guide or instructions for preparation."@en ;
+             rdfs:label "instruction"@en .
+
+
+###  https://w3id.org/flashcards/vocab/2018#mediaItem
+:mediaItem rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Answer ,
+                       :Stack ,
+                       :Test ;
+           rdfs:comment "Binary data for e.g. an audio file, an image or other types of media that a card requires."@en ;
+           rdfs:label "media"@en ;
+           rdfs:seeAlso :mediaUrl .
+
+
+###  https://w3id.org/flashcards/vocab/2018#mediaUrl
+:mediaUrl rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Answer ,
+                      :Stack ,
+                      :Test ;
+          rdfs:range xsd:string ;
+          rdfs:comment "A direct URL to a media file that is requred for displaying a card."@en ;
+          rdfs:label "media url"@en ;
+          rdfs:seeAlso :mediaItem .
+
+
+###  https://w3id.org/flashcards/vocab/2018#sortOrder
+:sortOrder rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
            rdfs:domain :Card ;
            rdfs:range xsd:positiveInteger ;
-           rdfs:comment "The initial card sort order expressed as an integer value. The sort order should be used as a suggestion, e.g. when no other sort order exists, and may be ignored by users and tools."@en ;
+           rdfs:comment "The initial card sort order expressed as an integer value. The sort order should be used as a suggestion, e.g. when no other sort order exists, and may be ignored by users and tools. The sort order does not imply that consecutive cards have a sort order incrremented by one."@en ;
            rdfs:label "sort order"@en .
 
 
-###  http://ns.peterkrantz.se/flashcards/2018#text
+###  https://w3id.org/flashcards/vocab/2018#text
 :text rdf:type owl:DatatypeProperty ;
       rdfs:domain :Card ;
+      rdfs:range xsd:string ;
       rdfs:comment "Text content for this object."@en ;
       rdfs:label "text"@en .
 
@@ -64,28 +111,28 @@
 #    Classes
 #################################################################
 
-###  http://ns.peterkrantz.se/flashcards/2018#Answer
+###  https://w3id.org/flashcards/vocab/2018#Answer
 :Answer rdf:type owl:Class ;
         <http://purl.org/dc/terms/isPartOf> :Card ;
-        rdfs:comment "An answer to a related test."@en ;
+        rdfs:comment "An answer to a related test - thing that the user is trying to memorize. Representing the back side of a physical flash card."@en ;
         rdfs:label "Answer"@en .
 
 
-###  http://ns.peterkrantz.se/flashcards/2018#Card
+###  https://w3id.org/flashcards/vocab/2018#Card
 :Card rdf:type owl:Class ;
       <http://purl.org/dc/terms/isPartOf> :Stack ;
       rdfs:comment "A physical or virtual card bearing information such as words, images or numbers, on either or both sides. Used in classroom drills or in private study. The card has an associated test and an answer."@en ;
       rdfs:label "Card"@en .
 
 
-###  http://ns.peterkrantz.se/flashcards/2018#Stack
+###  https://w3id.org/flashcards/vocab/2018#Stack
 :Stack rdf:type owl:Class ;
        <http://purl.org/dc/terms/hasPart> :Card ;
        rdfs:comment "A stack represents a collection of cards and is typically used to group cards belonging to a topic being studied. E.g. a collection of cards containing vocabulary for a chapter in a language textbook."@en ;
        rdfs:label "Stack"@en .
 
 
-###  http://ns.peterkrantz.se/flashcards/2018#Test
+###  https://w3id.org/flashcards/vocab/2018#Test
 :Test rdf:type owl:Class ;
       <http://purl.org/dc/terms/isPartOf> :Card ;
       rdfs:comment "The information the user is trying to memorize. Representing the front side of a physical card."@en ;

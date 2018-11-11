@@ -3,55 +3,70 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
-      "@id" : "http://ns.peterkrantz.se/flashcards/2018#Answer"
+      "@id" : "https://w3id.org/flashcards/vocab/2018#Answer"
     }, {
-      "@id" : "http://ns.peterkrantz.se/flashcards/2018#Card"
+      "@id" : "https://w3id.org/flashcards/vocab/2018#Card"
     }, {
-      "@id" : "http://ns.peterkrantz.se/flashcards/2018#Stack"
+      "@id" : "https://w3id.org/flashcards/vocab/2018#Stack"
     }, {
-      "@id" : "http://ns.peterkrantz.se/flashcards/2018#Test"
+      "@id" : "https://w3id.org/flashcards/vocab/2018#Test"
     } ]
   } ]
 }, {
-  "@id" : "http://ns.peterkrantz.se/flashcards/2018#",
+  "@id" : "http://purl.org/dc/elements/1.1/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/hasPart",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/isPartOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://w3id.org/flashcards/vocab/2018#",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/elements/1.1/creator" : [ {
     "@value" : "Peter Krantz"
   } ],
-  "http://purl.org/dc/terms/abstract" : [ {
+  "http://purl.org/dc/elements/1.1/description" : [ {
     "@language" : "en",
-    "@value" : "This document also contains examples of serialization in XML and JSON."
+    "@value" : "This vocanulary has an associated XML Schema file showing an example serialization format for flash cards."
   } ],
   "http://purl.org/dc/terms/license" : [ {
     "@id" : "http://creativecommons.org/licenses/by/4.0/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "This vocabulary describes flash cards. A flash card contains information such as words, numbers or images. Flash cards are used by students in classroom drills or in private study to improve memorization. A card contains the information being memorized and is divided into a question and a related answer. Multiple related cards can be grouped in a stack."
+    "@value" : "This vocabulary describes flash cards. Flash cards are used by students in classroom drills or in private study to improve memorization. A flash card contains information such as words, numbers or images and is divided into a test and a related answer. Multiple cards belong to a stack e.g. vocabulary cards for a chapter in a foreign language textbook."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Flash card ontology"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "http://purl.org/dcx/lrmi-terms/"
   } ]
 }, {
-  "@id" : "http://ns.peterkrantz.se/flashcards/2018#Answer",
+  "@id" : "https://w3id.org/flashcards/vocab/2018#Answer",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/isPartOf" : [ {
-    "@id" : "http://ns.peterkrantz.se/flashcards/2018#Card"
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Card"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "An answer to a related test."
+    "@value" : "An answer to a related test - thing that the user is trying to memorize. Representing the back side of a physical flash card."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Answer"
   } ]
 }, {
-  "@id" : "http://ns.peterkrantz.se/flashcards/2018#Card",
+  "@id" : "https://w3id.org/flashcards/vocab/2018#Card",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/isPartOf" : [ {
-    "@id" : "http://ns.peterkrantz.se/flashcards/2018#Stack"
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Stack"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -62,10 +77,10 @@
     "@value" : "Card"
   } ]
 }, {
-  "@id" : "http://ns.peterkrantz.se/flashcards/2018#Stack",
+  "@id" : "https://w3id.org/flashcards/vocab/2018#Stack",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/hasPart" : [ {
-    "@id" : "http://ns.peterkrantz.se/flashcards/2018#Card"
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Card"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -76,10 +91,10 @@
     "@value" : "Stack"
   } ]
 }, {
-  "@id" : "http://ns.peterkrantz.se/flashcards/2018#Test",
+  "@id" : "https://w3id.org/flashcards/vocab/2018#Test",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/terms/isPartOf" : [ {
-    "@id" : "http://ns.peterkrantz.se/flashcards/2018#Card"
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Card"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -90,48 +105,118 @@
     "@value" : "Test"
   } ]
 }, {
-  "@id" : "http://ns.peterkrantz.se/flashcards/2018#mediaItem",
+  "@id" : "https://w3id.org/flashcards/vocab/2018#hint",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Media item data for a audio, an image or other types of media."
+    "@value" : "A short text with a hint to the user about the answer."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://ns.peterkrantz.se/flashcards/2018#Card"
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Answer"
+  }, {
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Test"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hint"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/flashcards/vocab/2018#instruction",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A text with instructions to a user of a stack of cards. It could be a e.g. a study guide or instructions for preparation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Stack"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "instruction"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://w3id.org/flashcards/vocab/2018#mediaItem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Binary data for e.g. an audio file, an image or other types of media that a card requires."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Answer"
+  }, {
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Stack"
+  }, {
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Test"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "media"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://w3id.org/flashcards/vocab/2018#mediaUrl"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
-  "@id" : "http://ns.peterkrantz.se/flashcards/2018#relatedWork",
+  "@id" : "https://w3id.org/flashcards/vocab/2018#mediaUrl",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A related creative work as e.g. a book, a book chapter, a movie or song. This property can be used to connect a stack of cards to a vocabulary from a chapter in a language textbook."
+    "@value" : "A direct URL to a media file that is requred for displaying a card."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://ns.peterkrantz.se/flashcards/2018#Stack"
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Answer"
+  }, {
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Stack"
+  }, {
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Test"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "media url"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://w3id.org/flashcards/vocab/2018#mediaItem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://w3id.org/flashcards/vocab/2018#relatedWork",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A related creative work like a book, a book chapter, a movie or song to which this item is relates. This property can be e.g. be used to connect a stack of flash cards  to a chapter in a french language textbook."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Stack"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "related work"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
-  "@id" : "http://ns.peterkrantz.se/flashcards/2018#sortOrder",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@id" : "https://w3id.org/flashcards/vocab/2018#sortOrder",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "The initial card sort order expressed as an integer value. The sort order should be used as a suggestion, e.g. when no other sort order exists, and may be ignored by users and tools."
+    "@value" : "The initial card sort order expressed as an integer value. The sort order should be used as a suggestion, e.g. when no other sort order exists, and may be ignored by users and tools. The sort order does not imply that consecutive cards have a sort order incrremented by one."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://ns.peterkrantz.se/flashcards/2018#Card"
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Card"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -141,23 +226,20 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
   } ]
 }, {
-  "@id" : "http://ns.peterkrantz.se/flashcards/2018#text",
+  "@id" : "https://w3id.org/flashcards/vocab/2018#text",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Text content for this object."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://ns.peterkrantz.se/flashcards/2018#Card"
+    "@id" : "https://w3id.org/flashcards/vocab/2018#Card"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "text"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
-}, {
-  "@id" : "http://purl.org/dc/terms/hasPart",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/isPartOf",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 } ]
