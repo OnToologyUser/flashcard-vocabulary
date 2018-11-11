@@ -1,25 +1,5 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "foaf:Image" "foaf:Agent" "foaf:Document" "rdfs:Class" "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing" "foaf:OnlineAccount" "foaf:Person" "foaf:OnlineChatAccount" "foaf:PersonalProfileDocument" "foaf:OnlineGamingAccount" "foaf:Organization" "foaf:Group" "foaf:OnlineEcommerceAccount" ; /*classes style*/
-	"dcterms:SizeOrDuration" -> "dcterms:MediaTypeOrExtent" [ label = "rdfs:subClassOf" ];
-	"dcterms:Jurisdiction" -> "dcterms:LocationPeriodOrJurisdiction" [ label = "rdfs:subClassOf" ];
-	"dcterms:PeriodOfTime" -> "dcterms:LocationPeriodOrJurisdiction" [ label = "rdfs:subClassOf" ];
-	"foaf:OnlineGamingAccount" -> "foaf:OnlineAccount" [ label = "rdfs:subClassOf" ];
-	"foaf:PersonalProfileDocument" -> "foaf:Document" [ label = "rdfs:subClassOf" ];
-	"dcterms:FileFormat" -> "dcterms:MediaType" [ label = "rdfs:subClassOf" ];
-	"foaf:Group" -> "foaf:Agent" [ label = "rdfs:subClassOf" ];
-	"dcterms:MediaType" -> "dcterms:MediaTypeOrExtent" [ label = "rdfs:subClassOf" ];
-	"foaf:OnlineChatAccount" -> "foaf:OnlineAccount" [ label = "rdfs:subClassOf" ];
-	"foaf:Image" -> "foaf:Document" [ label = "rdfs:subClassOf" ];
-	"dcterms:LicenseDocument" -> "dcterms:RightsStatement" [ label = "rdfs:subClassOf" ];
-	"foaf:Person" -> "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing" [ label = "rdfs:subClassOf" ];
-	"foaf:Person" -> "foaf:Agent" [ label = "rdfs:subClassOf" ];
-	"dcterms:Location" -> "dcterms:LocationPeriodOrJurisdiction" [ label = "rdfs:subClassOf" ];
-	"foaf:Organization" -> "foaf:Agent" [ label = "rdfs:subClassOf" ];
-	"foaf:OnlineAccount" -> "owl:Thing" [ label = "rdfs:subClassOf" ];
-	"dcterms:PhysicalMedium" -> "dcterms:MediaType" [ label = "rdfs:subClassOf" ];
-	"dcterms:AgentClass" -> "rdfs:Class" [ label = "rdfs:subClassOf" ];
-	"foaf:OnlineEcommerceAccount" -> "foaf:OnlineAccount" [ label = "rdfs:subClassOf" ];
 
 }
